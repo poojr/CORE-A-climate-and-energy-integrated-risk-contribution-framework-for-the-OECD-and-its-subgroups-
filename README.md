@@ -3,6 +3,17 @@
 ## Overview
 
 This repository contains the dataset and STATA Code used in the study:
+## Repository Contents
+
+| File                                  | Description                                                                                                                                                                                                        |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Panel.do**                          | Main STATA replication file containing data preparation, diagnostic testing, PCA implementation, panel econometric estimation, cointegration analysis, causality testing, and robustness checks used in the study. |
+| **Panel_final_data.xlsx**             | Master panel dataset containing climate, energy, demographic, and risk contribution variables used in the empirical analysis.                                                                                      |
+| **SCED_REVISED_PARC.xlsm**            | Working Excel workbook containing GDP-weighted systemic index calculations, risk contribution calculations, intermediate computations, and embedded formulas used in constructing the CORE framework.              |
+| **Risk_Calculation_Methodology.xlsx** | Detailed step-by-step documentation of the risk contribution and systemic index construction methodology.                                                                                                          |
+| **subsample.xlsx**                    | Dataset containing OECD subgroup classifications and subsample-specific data used for G7, Nordic, and Emerging OECD analyses.                                                                                      |
+| **README.md**                         | Repository documentation describing the dataset, methodology, variable construction, replication process, and citation information.                                                                                |
+
 
 **Pooja R., Sumanjay Dutta, and Parthajit Kayal (2026)**
 *CORE: A Climate and Energy Integrated Risk Contribution Framework for the OECD and its Subgroups*
