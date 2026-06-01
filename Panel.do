@@ -46,6 +46,38 @@ reg MonthlyDeltarisk Precipitation AverageMeanSurfaceAirTempera Population GHGEm
 ** claculating multicollinearity for delta risk 
 vif
 * Cadf & Cips test for stationarity 
+
+*====================================================
+* Principal Component Analysis (PCA)
+*====================================================
+
+* Log transform variables used in PCA
+gen log_POP = log(Population)
+gen log_GHG = log(GHGEmissionsCO2equivalents)
+gen log_energycons = log(MonthlyPrimaryenergyconsumpti)
+gen log_elecprodn = log(MonthlyElectricitygeneration)
+
+* Run PCA
+pca log_POP log_GHG log_energycons log_elecprodn
+
+* Generate first principal component
+predict PC0, score
+
+* Check variance explained
+estat loadings
+screeplot
+
+* Test stationarity of PC0
+pescadf PC0, lags(3)
+
+* First difference if non-stationary
+gen D_PC0 = D.PC0
+
+* Rescale for interpretation
+gen D_PC0_scaled = D_PC0*100
+
+* Check stationarity after differencing
+pescadf D_PC0_scaled, lags(3)
  ssc install pescadf
 pescadf log_risk_transfer, lags(3)
 pescadf log_GHG, lags(3)
